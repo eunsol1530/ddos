@@ -1,6 +1,3 @@
-
-
-
 process.on('uncaughtException', function() {});
 process.on('unhandledRejection', function() {});
 const net = require('net');
@@ -104,7 +101,7 @@ req.on('connect', function (res, socket, head) {
         servername: parsed.host,
         secure: true,
         jar: theJar,
-        rejectUnauthorized: false,
+        rejectUnauthorized: true, // Changed from false to true
         sessionTimeout: 5000,
         socket: socket
     }, function () {
